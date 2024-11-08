@@ -5,7 +5,7 @@ class Frog extends Animal{
     public $legs = 2;
 
     public function jump(){
-        return "Auooo";
+        return "hop hop";
     }
 }
 
