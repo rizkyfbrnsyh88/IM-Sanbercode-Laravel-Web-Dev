@@ -9,4 +9,12 @@ class DashboardController extends Controller
     public function home (){
         return view('home');
     }
+
+    public function table (){
+        return view('table');
+    }
+
+    public function dataTable (){
+        return view('data-table');
+    }
 }
