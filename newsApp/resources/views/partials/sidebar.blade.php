@@ -57,6 +57,14 @@
             </li>
           </ul>
         </li>
+        <li class="nav-item">
+          <a href="/cast" class="nav-link">
+          <i class="nav-icon fas fa-list"></i>
+          <p>
+              Cast
+          </p>
+          </a>
+        </li>
         
       </ul>
     </nav>

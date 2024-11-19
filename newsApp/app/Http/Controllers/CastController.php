@@ -37,19 +37,19 @@ class CastController extends Controller
     public function index()
     {
         $cast = DB::table('casts')->get();
-        return view('cast.index', compact('cast'));
+        return view('cast.index', ['casts' => $cast]);
     }
 
     public function show($id)
     {
-        $cast = DB::table('casts')->where('id', $id)->first();
-        return view('cast.show', compact('cast'));
+        $cast = DB::table('casts')->find($id);
+        return view('cast.show', ['casts' => $cast]);
     }
 
     public function edit($id)
     {
         $cast = DB::table('casts')->where('id', $id)->first();
-        return view('cast.edit', compact('cast'));
+        return view('cast.edit', ['casts' => $cast]);
     }
 
     public function update($id, Request $request)

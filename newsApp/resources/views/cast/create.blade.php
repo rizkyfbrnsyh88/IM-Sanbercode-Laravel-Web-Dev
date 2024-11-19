@@ -6,7 +6,6 @@ Halaman Tambah Data
 <div>
     <h2>Tambah Data</h2>
         <form action="/cast" method="POST">
-            @csrf
             @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -15,7 +14,8 @@ Halaman Tambah Data
                     @endforeach
                 </ul>
             </div>
-        @endif
+            @endif
+            @csrf
             <div class="form-group">
                 <label for="name">Nama Lengkap</label>
                 <input type="text" class="form-control" name="name" id="nama" value="{{old('name')}}">

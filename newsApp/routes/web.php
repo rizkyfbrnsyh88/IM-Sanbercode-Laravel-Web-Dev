@@ -21,12 +21,22 @@ Route::get('/register', [AuthController::class, 'register']);
 Route::post('/welcome', [AuthController::class, 'welcome']);
 Route::get('/table', [DashboardController::class, 'table']);
 Route::get('/data-tables', [DashboardController::class, 'dataTable']);
-Route::get('/cast', [CastController::class, 'index']);
+
+// CRUD
+// C => Create Data
 Route::get('/cast/create', [CastController::class, 'create']);
+// Input ke DB
 Route::post('/cast', [CastController::class, 'store']);
+
+// R => Read Data
+Route::get('/cast', [CastController::class, 'index']);
 Route::get('/cast/{cast_id}', [CastController::class, 'show']);
+
+// U => Update Data
 Route::get('/cast/{cast_id}/edit', [CastController::class, 'edit']);
 Route::put('/cast/{cast_id}', [CastController::class, 'update']);
+
+// D => Delete Data
 Route::delete('/cast/{cast_id}', [CastController::class, 'destroy']);
 
 
