@@ -3,7 +3,7 @@
 SanberBook
 @endsection
 @section('content')
-<a href="/cast/create" class="btn btn-primary">Tambah</a>
+<a href="/cast/create" class="btn btn-primary my-3">Tambah</a>
         <table class="table">
             <thead class="thead-light">
               <tr>

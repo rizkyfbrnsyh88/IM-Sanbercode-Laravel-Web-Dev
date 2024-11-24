@@ -5,7 +5,11 @@
         <img src="{{asset('admin/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block">Alexander Pierce</a>
+        @auth
+        <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+          @else
+          <a href="#" class="d-block">Belum Login</a>
+        @endauth
       </div>
     </div>
 
@@ -65,6 +69,42 @@
           </p>
           </a>
         </li>
+        @auth
+        <li class="nav-item">
+          <a href="/genres" class="nav-link">
+          <i class="nav-icon fas fa-list"></i>
+          <p>
+              Genres 
+          </p>
+          </a>
+        </li>
+        @endauth
+        <li class="nav-item">
+          <a href="/films" class="nav-link">
+          <i class="nav-icon fas fa-list"></i>
+          <p>
+              Films 
+          </p>
+          </a>
+        </li>
+        @auth
+        <li class="nav-item my-3">
+          <form action="/logout" method="POST">
+            @csrf
+            <button type="submit" class="btn btn-danger btn-block">Logout</button>
+          </form>
+        </li>
+        @endauth
+
+        @guest
+        <li class="nav-item bg-primary">
+          <a href="/login" class="nav-link">
+          <p>
+              Login 
+          </p>
+          </a>
+        </li>
+        @endguest
         
       </ul>
     </nav>
